@@ -10,11 +10,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  Tests:
 
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Run tests
-      run: xcodebuild clean build test -project EssentialFeed/EssentialFeed.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO
+      run: xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO
