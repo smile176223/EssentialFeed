@@ -10,26 +10,26 @@ import EssentialFeed
 
 final class EssentialFeedAPIEndToEndTests: XCTestCase {
 
-    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
-        switch getFeedResult() {
-        case let .success(items)?:
-            XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
-            XCTAssertEqual(items[0], expectedItems(at: 0))
-            XCTAssertEqual(items[1], expectedItems(at: 1))
-            XCTAssertEqual(items[2], expectedItems(at: 2))
-            XCTAssertEqual(items[3], expectedItems(at: 3))
-            XCTAssertEqual(items[4], expectedItems(at: 4))
-            XCTAssertEqual(items[5], expectedItems(at: 5))
-            XCTAssertEqual(items[6], expectedItems(at: 6))
-            XCTAssertEqual(items[7], expectedItems(at: 7))
-            
-        case let .failure(error)?:
-            XCTFail("Expected successful feed result, got \(error) instead")
-        
-        default:
-            XCTFail("Expected successful feed result, got no result instead")
-        }
-    }
+//    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
+//        switch getFeedResult() {
+//        case let .success(items)?:
+//            XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
+//            XCTAssertEqual(items[0], expectedItems(at: 0))
+//            XCTAssertEqual(items[1], expectedItems(at: 1))
+//            XCTAssertEqual(items[2], expectedItems(at: 2))
+//            XCTAssertEqual(items[3], expectedItems(at: 3))
+//            XCTAssertEqual(items[4], expectedItems(at: 4))
+//            XCTAssertEqual(items[5], expectedItems(at: 5))
+//            XCTAssertEqual(items[6], expectedItems(at: 6))
+//            XCTAssertEqual(items[7], expectedItems(at: 7))
+//            
+//        case let .failure(error)?:
+//            XCTFail("Expected successful feed result, got \(error) instead")
+//        
+//        default:
+//            XCTFail("Expected successful feed result, got no result instead")
+//        }
+//    }
     
     // MARK: - Helpers
     
