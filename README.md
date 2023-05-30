@@ -1,3 +1,3 @@
 # EssentialFeed
 ------
-![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+![EssentialFeed](https://github.com/smile176223/EssentialFeed/actions/workflows/swift.yml/badge.svg)
