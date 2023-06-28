@@ -25,6 +25,7 @@
 		0C4E49122A25E62F00859414 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4E48D42A25E55700859414 /* EssentialFeed.framework */; };
 		0C4E491A2A25E66B00859414 /* XCTestCase+MemoryLeadTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E49032A25E5DF00859414 /* XCTestCase+MemoryLeadTracking.swift */; };
 		0C4E491C2A25E6C600859414 /* EssentialFeedAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E491B2A25E6C600859414 /* EssentialFeedAPIEndToEndTests.swift */; };
+		0C6CED3F2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CED3E2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		0C4E49062A25E5DF00859414 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		0C4E490E2A25E62F00859414 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4E491B2A25E6C600859414 /* EssentialFeedAPIEndToEndTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialFeedAPIEndToEndTests.swift; sourceTree = "<group>"; };
+		0C6CED3E2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0C3CACC02A4A72A4002D7B4A /* CacheFeedUseCaseTests.swift */,
+				0C6CED3E2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				0C4E49082A25E5DF00859414 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				0C4E49092A25E5DF00859414 /* URLSessionHTTPClientTests.swift in Sources */,
 				0C3CACC12A4A72A4002D7B4A /* CacheFeedUseCaseTests.swift in Sources */,
+				0C6CED3F2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				0C4E49072A25E5DF00859414 /* XCTestCase+MemoryLeadTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
