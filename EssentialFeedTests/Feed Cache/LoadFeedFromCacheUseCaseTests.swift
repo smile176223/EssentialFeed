@@ -158,7 +158,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
             switch (receivedResult, expectedResult) {
             case let (.success(receivedImages), .success(expectedImages)):
                 XCTAssertEqual(receivedImages, expectedImages, file: file, line: line)
-            
+                
             case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
@@ -170,33 +170,5 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         
         action()
         wait(for: [exp], timeout: 1.0)
-    }
-    
-    private func uniqueImage() -> FeedImage {
-        return FeedImage(id: UUID(), description: "any", location: "any", url: anyURL())
-    }
-    
-    private func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
-        let models = [uniqueImage(), uniqueImage()]
-        let local = models.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
-        return (models, local)
-    }
-    
-    private func anyURL() -> URL {
-        return URL(string: "https://any-url.com")!
-    }
-    
-    private func anyNSError() -> NSError {
-        return NSError(domain: "any error", code: 0)
-    }
-}
-
-private extension Date {
-    func adding(days: Int) -> Date {
-        return Calendar(identifier: .gregorian).date(byAdding: .day, value: days, to: self)!
-    }
-    
-    func adding(seconds: TimeInterval) -> Date {
-        return self + seconds
     }
 }
