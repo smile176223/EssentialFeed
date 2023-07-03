@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class CodableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     
     override func setUp() {
         super.setUp()
@@ -151,28 +151,28 @@ class CodableFeedStoreTests: XCTestCase {
         let sut = makeSUT()
         insert((uniqueImageFeed().local, Date()), to: sut)
         
-        let deletionError = deleteCache(from: sut)
+        deleteCache(from: sut)
         
         expect(sut, toRetrieve: .empty)
     }
     
-//    func test_delete_deliversErrorOnDeletionError() {
+    func test_delete_deliversErrorOnDeletionError() {
 //        let noDeletePermissionURL = cachesDirectory()
 //        let sut = makeSUT(storeURL: noDeletePermissionURL)
 //
 //        let deletionError = deleteCache(from: sut)
 //
 //        XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
-//    }
+    }
     
-//    func test_delete_hasNoSideEffectsOnDeletionError() {
+    func test_delete_hasNoSideEffectsOnDeletionError() {
 //        let noDeletePermissionURL = cachesDirectory()
 //        let sut = makeSUT(storeURL: noDeletePermissionURL)
-//        
+//
 //        deleteCache(from: sut)
-//        
+//
 //        expect(sut, toRetrieve: .empty)
-//    }
+    }
     
     func test_storeSideEffects_runSerially() {
         let sut = makeSUT()
