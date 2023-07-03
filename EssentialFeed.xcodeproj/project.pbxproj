@@ -38,6 +38,7 @@
 		0C6CED542A52B8D200C1FB07 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CED532A52B8D200C1FB07 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
 		0C6CED562A52B97700C1FB07 /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CED552A52B97700C1FB07 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */; };
 		0C6CED582A52B9DE00C1FB07 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CED572A52B9DE00C1FB07 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */; };
+		0C6CED5D2A52BE6A00C1FB07 /* CoreDataFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CED5C2A52BE6A00C1FB07 /* CoreDataFeedStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		0C6CED532A52B8D200C1FB07 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		0C6CED552A52B97700C1FB07 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableInsertFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		0C6CED572A52B9DE00C1FB07 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableDeleteFeedStoreSpecs.swift"; sourceTree = "<group>"; };
+		0C6CED5C2A52BE6A00C1FB07 /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				0C6CED3E2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift */,
 				0C6CED432A4D783F00C1FB07 /* ValidateFeedCacheUseCaseTests.swift */,
 				0C6CED4B2A4ECD3700C1FB07 /* CodableFeedStoreTests.swift */,
+				0C6CED5C2A52BE6A00C1FB07 /* CoreDataFeedStoreTests.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				0C6CED3F2A4C221000C1FB07 /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				0C6CED502A52B4B600C1FB07 /* FeedStoreSpecs.swift in Sources */,
 				0C4E49072A25E5DF00859414 /* XCTestCase+MemoryLeadTracking.swift in Sources */,
+				0C6CED5D2A52BE6A00C1FB07 /* CoreDataFeedStoreTests.swift in Sources */,
 				0C6CED522A52B54600C1FB07 /* XCTestCase+FeedStoreSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
