@@ -5,8 +5,8 @@
 //  Created by Liam on 2023/7/11.
 //
 
-//import Foundation
-//import EssentialFeed
+import Foundation
+import EssentialFeed
 //
 //final class FeedViewModel {
 //    typealias Observer<T> = (T) -> Void
@@ -29,3 +29,8 @@
 //        }
 //    }
 //}
+
+// MVP pattern
+struct FeedViewModel {
+    let feed: [FeedImage]
+}
