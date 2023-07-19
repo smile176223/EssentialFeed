@@ -6,4 +6,5 @@
   
 */
 
-"FEED_VIEW_TITLE" = "我的 Feed";
+"FEED_VIEW_TITLE" = "我的動態";
+"FEED_VIEW_CONNECTION_ERROR" = "無法連接到伺服器";
