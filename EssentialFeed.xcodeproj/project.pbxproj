@@ -267,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				0C0578972A6770DC0018E902 /* UITableView+Dequeuing.swift */,
+				0C3523682A5BAA7B005E19D2 /* UIVIew+Shimmering.swift */,
+				0C35238C2A64C62B005E19D2 /* UIImageView+Animations.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -330,8 +332,6 @@
 			children = (
 				0C0578962A6770C80018E902 /* Helpers */,
 				0C3523662A5B917B005E19D2 /* FeedImageCell.swift */,
-				0C3523682A5BAA7B005E19D2 /* UIVIew+Shimmering.swift */,
-				0C35238C2A64C62B005E19D2 /* UIImageView+Animations.swift */,
 				0C0578902A676B1D0018E902 /* ErrorView.swift */,
 				0C0578922A676C970018E902 /* Feed.storyboard */,
 				0C0578942A676CDA0018E902 /* Feed.xcassets */,
