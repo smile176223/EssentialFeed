@@ -20,7 +20,7 @@ final class FeedImagePresenterTests: XCTestCase {
         let (sut, view) = makeSUT()
         let image = uniqueImage()
         
-        sut.didStartLoadingImageFeed(for: image)
+        sut.didStartLoadingImageData(for: image)
         
         let message = view.messages.first
         XCTAssertEqual(view.messages.count, 1)
