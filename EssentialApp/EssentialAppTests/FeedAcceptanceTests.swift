@@ -34,7 +34,9 @@ class FeedAcceptanceTests: XCTestCase {
     }
     
     func test_onLaunch_displaysEmptyFeedWhenCustomerHasNoConnectivityAndNoCache() {
+        let feed = launch(httpClient: .offline, store: .empty)
 
+        XCTAssertEqual(feed.numberOfRenderedFeedImageViews(), 0)
     }
     
     // MARK: - Helpers
@@ -43,8 +45,6 @@ class FeedAcceptanceTests: XCTestCase {
         httpClient: HTTPClientStub = .offline,
         store: InMemoryFeedStore = .empty
     ) -> FeedViewController {
-        let store = InMemoryFeedStore.empty
-        let httpClient = HTTPClientStub.online(response)
         let sut = SceneDelegate(httpClient: httpClient, store: store)
         sut.window = UIWindow()
         sut.configureWindow()
@@ -74,7 +74,7 @@ class FeedAcceptanceTests: XCTestCase {
         }
         
         static func online(_ stub: @escaping (URL) -> (Data, HTTPURLResponse)) -> HTTPClientStub {
-            HTTPClientStub(stub: { url in .success(stub(url)) })
+            HTTPClientStub { url in .success(stub(url)) }
         }
     }
     
@@ -92,16 +92,16 @@ class FeedAcceptanceTests: XCTestCase {
             completion(.success(()))
         }
         
-        func retrieve(completion: @escaping RetrievalCompletion) {
+        func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
             completion(.success(feedCache))
         }
         
-        func insert(_ data: Data, for url: URL, completion: @escaping (InsertionResult) -> Void) {
+        func insert(_ data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
             feedImageDataCache[url] = data
             completion(.success(()))
         }
         
-        func retrieve(dataForURL url: URL, completion: @escaping (RetrievalResult) -> Void) {
+        func retrieve(dataForURL url: URL, completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
             completion(.success(feedImageDataCache[url]))
         }
         
