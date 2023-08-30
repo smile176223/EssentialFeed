@@ -156,7 +156,7 @@ class CommentsUIIntegrationTests: XCTestCase {
     
     // MARK: = Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: ListViewController, loader: LoaderSpy) {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: ListViewController, loader: LoaderSpy) {
         let loader = LoaderSpy()
         let sut = CommentsUIComposer.commentsComposedWith(commentsLoader: loader.loadPublisher)
         trackForMemoryLeaks(loader, file: file, line: line)
@@ -168,7 +168,7 @@ class CommentsUIIntegrationTests: XCTestCase {
         return ImageComment(id: UUID(), message: message, createdAt: Date(), username: username)
     }
     
-    private func assertThat(_ sut: ListViewController, isRendering comments: [ImageComment], file: StaticString = #file, line: UInt = #line)  {
+    private func assertThat(_ sut: ListViewController, isRendering comments: [ImageComment], file: StaticString = #filePath, line: UInt = #line)  {
         XCTAssertEqual(sut.numberOfRenderedComments(), comments.count, "Comments count", file: file, line: line)
         
         let viewModel = ImageCommentsPresenter.map(comments)
