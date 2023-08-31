@@ -132,7 +132,7 @@ class FeedAcceptanceTests: XCTestCase {
                 "author": [
                     "username": "a username"
                 ]
-            ],
+            ] as [String : Any]
         ]])
     }
     
