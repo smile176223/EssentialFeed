@@ -10,26 +10,26 @@ import EssentialFeed
 
 final class EssentialFeedAPIEndToEndTests: XCTestCase {
 
-//    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
-//        switch getFeedResult() {
-//        case let .success(imageFeed)?:
-//            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account image feed")
-//            XCTAssertEqual(imageFeed[0], expectedImage(at: 0))
-//            XCTAssertEqual(imageFeed[1], expectedImage(at: 1))
-//            XCTAssertEqual(imageFeed[2], expectedImage(at: 2))
-//            XCTAssertEqual(imageFeed[3], expectedImage(at: 3))
-//            XCTAssertEqual(imageFeed[4], expectedImage(at: 4))
-//            XCTAssertEqual(imageFeed[5], expectedImage(at: 5))
-//            XCTAssertEqual(imageFeed[6], expectedImage(at: 6))
-//            XCTAssertEqual(imageFeed[7], expectedImage(at: 7))
-//
-//        case let .failure(error)?:
-//            XCTFail("Expected successful feed result, got \(error) instead")
-//
-//        default:
-//            XCTFail("Expected successful feed result, got no result instead")
-//        }
-//    }
+    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
+        switch getFeedResult() {
+        case let .success(imageFeed)?:
+            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account image feed")
+            XCTAssertEqual(imageFeed[0], expectedImage(at: 0))
+            XCTAssertEqual(imageFeed[1], expectedImage(at: 1))
+            XCTAssertEqual(imageFeed[2], expectedImage(at: 2))
+            XCTAssertEqual(imageFeed[3], expectedImage(at: 3))
+            XCTAssertEqual(imageFeed[4], expectedImage(at: 4))
+            XCTAssertEqual(imageFeed[5], expectedImage(at: 5))
+            XCTAssertEqual(imageFeed[6], expectedImage(at: 6))
+            XCTAssertEqual(imageFeed[7], expectedImage(at: 7))
+
+        case let .failure(error)?:
+            XCTFail("Expected successful feed result, got \(error) instead")
+
+        default:
+            XCTFail("Expected successful feed result, got no result instead")
+        }
+    }
     
     func test_eneToEndTestServerGETFeedImageDataResult_matchesFixedTestAccountData() {
         switch getFeedImageDataResult() {
@@ -67,12 +67,12 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
         
     }
     
-    private func getFeedImageDataResult(file: StaticString = #filePath, line: UInt = #line) -> FeedImageDataLoader.Result? {
+    private func getFeedImageDataResult(file: StaticString = #filePath, line: UInt = #line) -> Result<Data, Error>? {
         let client = ephemeralClient()
         let exp = expectation(description: "Wait for load completion")
         let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
         
-        var receivedResult: FeedImageDataLoader.Result?
+        var receivedResult: Result<Data, Error>?
         client.get(from: url) { result in
             receivedResult = result.flatMap { (data, response) in
                 do {
@@ -83,7 +83,7 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 5.0)
+        wait(for: [exp], timeout: 15.0)
         
         return receivedResult
     }
